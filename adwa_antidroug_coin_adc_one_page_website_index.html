@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antidroug World Association • AntidrougCoin (ADC)</title>
+  <meta name="description" content="Az Antidroug World Association (ADWA) hivatalos oldala. AntidrougCoin (ADC): Sport • Közösség • Élet. Egy token – egy edzés – egy esély az életre."/>
+  <meta property="og:title" content="AntidrougCoin (ADC) – Sport • Közösség • Élet" />
+  <meta property="og:description" content="Globális sportalapú prevenciós hálózat. ADC token: PoP jutalmazás, klubhozzáférés, átlátható finanszírozás." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand:#16a34a; --brand2:#22c55e; }
+    html { scroll-behavior:smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .btn { @apply inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold shadow-lg transition;
+           background: linear-gradient(135deg,var(--brand),var(--brand2)); color:white; }
+    .btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .btn-outline { @apply inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold border transition; }
+    .glass { backdrop-filter: saturate(160%) blur(8px); background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); }
+    /* Language switch */
+    [data-lang="en"]{ display:none; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/70 glass">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="size-9 rounded-xl bg-emerald-500/20 grid place-items-center text-emerald-400 font-extrabold">A</div>
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-tight">ADWA</div>
+          <div class="text-xs text-slate-400">Antidroug World Association</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#mission" class="hover:text-emerald-400">Küldetés</a>
+        <a href="#token" class="hover:text-emerald-400">ADC Token</a>
+        <a href="#roadmap" class="hover:text-emerald-400">Ütemterv</a>
+        <a href="#downloads" class="hover:text-emerald-400">Letöltések</a>
+        <a href="#contact" class="hover:text-emerald-400">Kapcsolat</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="langHu" class="btn-outline border-white/20 text-slate-200 hover:border-emerald-400 hover:text-emerald-400 px-3 py-2 rounded-xl text-xs">HU</button>
+        <button id="langEn" class="btn-outline border-white/20 text-slate-200 hover:border-emerald-400 hover:text-emerald-400 px-3 py-2 rounded-xl text-xs">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,.15),transparent_55%)]"></div>
+    <div class="mx-auto max-w-7xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+          AntidrougCoin <span class="text-emerald-400">(ADC)</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-300" data-i18n="heroLead" data-lang="hu">
+          Globális sportalapú prevenciós hálózat: <b>Sport • Közösség • Élet</b>. Egy token – egy edzés – egy esély az életre.
+        </p>
+        <p class="mt-5 text-lg text-slate-300" data-i18n="heroLead" data-lang="en">
+          Global sports‑based prevention network: <b>Sport • Community • Life</b>. One token – one training – one chance for life.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#downloads" class="btn" aria-label="Whitepaper letöltése">Whitepaper</a>
+          <a href="#mission" class="btn-outline border-white/20 px-5 py-3 rounded-2xl">Tudj meg többet</a>
+        </div>
+        <div class="mt-6 text-xs text-slate-400 max-w-prose">
+          *Az ADC használati/jutalmazási token; <b>nem</b> minősül befektetésnek vagy hozamígéretnek. A tőzsdei megjelenés cél, de nem garancia.
+        </div>
+      </div>
+      <div class="md:justify-self-end">
+        <div class="relative">
+          <div class="absolute -inset-1 bg-emerald-500/20 blur-2xl rounded-[2rem]"></div>
+          <div class="relative bg-gradient-to-br from-slate-900 to-slate-800 border border-white/10 rounded-[2rem] p-8 shadow-2xl">
+            <div class="text-slate-400 text-xs">Szerződés cím (mainnet után):</div>
+            <div class="mt-1 flex items-center gap-2">
+              <code id="contractAddress" class="text-emerald-300/90 select-all">[Hamarosan – Etherscan linkkel]</code>
+              <button id="copyAddr" class="btn-outline border-white/10 px-3 py-2 rounded-xl text-xs">Másolás</button>
+            </div>
+            <dl class="grid grid-cols-2 gap-4 mt-6 text-sm">
+              <div><dt class="text-slate-400">Összkínálat</dt><dd class="font-semibold">10 000 000 000 ADC</dd></div>
+              <div><dt class="text-slate-400">Tizedes</dt><dd class="font-semibold">18</dd></div>
+              <div><dt class="text-slate-400">Szabvány</dt><dd class="font-semibold">ERC‑20 (OpenZeppelin)</dd></div>
+              <div><dt class="text-slate-400">Állapot</dt><dd class="font-semibold">Sepolia → Audit → Mainnet</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Küldetésünk</h2>
+        <p class="mt-4 text-slate-300">Az ADWA egyesíti a világ sportegyesületeit, hogy közös erővel lépjen fel a drogok ellen. Az ADC token lehetővé teszi az ingyenes vagy támogatott edzést a részt vevő klubokban, a részvétel <em>Proof‑of‑Participation</em> (PoP) igazolásával és átlátható finanszírozással.</p>
+        <ul class="mt-6 space-y-3 text-slate-200">
+          <li>• Ingyenes / támogatott edzés ADC utalvánnyal / QR‑ral</li>
+          <li>• PoP mikrojutalmak hitelesített részvételre</li>
+          <li>• Edzői/mentori ösztönzők, klubgrantek</li>
+          <li>• Nyilvános KPI‑k: klubok, alkalmak, résztvevők</li>
+        </ul>
+      </div>
+      <div class="bg-slate-900/60 border border-white/10 rounded-2xl p-6">
+        <h3 class="font-semibold text-emerald-300">Biztonság & Megfelelés</h3>
+        <p class="mt-3 text-sm text-slate-300">OpenZeppelin kódalap, független audit mainnet előtt, multisig + timelock irányítás, Etherscan‑verifikáció. Az ADC <strong>nem</strong> hozamígéret; minden tőzsdei cél harmadik felek jóváhagyásától és jogi megfeleléstől függ.</p>
+        <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+          <div class="p-4 rounded-xl bg-slate-800/80">Audit: <span class="font-semibold">tervezett</span></div>
+          <div class="p-4 rounded-xl bg-slate-800/80">Etherscan: <span class="font-semibold">verifikáció</span></div>
+          <div class="p-4 rounded-xl bg-slate-800/80">Governance: <span class="font-semibold">multisig + timelock</span></div>
+          <div class="p-4 rounded-xl bg-slate-800/80">Adatvédelem: <span class="font-semibold">GDPR</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKEN -->
+  <section id="token" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">ADC Token – fő adatok</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <div class="text-slate-400 text-sm">Használat</div>
+          <div class="mt-2 font-semibold">PoP jutalmazás, klubhozzáférés, edzői ösztönzők</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <div class="text-slate-400 text-sm">Allokáció (javaslat)</div>
+          <div class="mt-2 text-sm leading-6">
+            60% Közösség & grantek<br/>
+            15% Ökoszisztéma<br/>
+            10% Likviditás & tartalék<br/>
+            10% Működés<br/>
+            5% Stratégiai / bug bounty
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <div class="text-slate-400 text-sm">Jog & megjegyzés</div>
+          <div class="mt-2 text-sm">Utility/jutalmazási token; nem befektetés, nincs hozamígéret. KYC/AML a fiat konverzióknál és nagy granteknél érvényes lehet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Ütemterv (24–36 hónap)</h2>
+      <ol class="mt-8 grid md:grid-cols-3 gap-6">
+        <li class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <div class="text-slate-400 text-sm">2025 Q3–Q4</div>
+          <div class="mt-2 font-semibold">Sepolia → Audit → Mainnet</div>
+          <p class="mt-2 text-sm text-slate-300">Etherscan, 100+ klub, PoP béta dashboard.</p>
+        </li>
+        <li class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <div class="text-slate-400 text-sm">2026 Q1–Q4</div>
+          <div class="mt-2 font-semibold">DEX pilot → Tier‑2 CEX/DEX</div>
+          <p class="mt-2 text-sm text-slate-300">Jogi memók, audit zárás, market making és likviditás.</p>
+        </li>
+        <li class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <div class="text-slate-400 text-sm">2027 Q1–Q4</div>
+          <div class="mt-2 font-semibold">Tier‑1 CEX (cél)</div>
+          <p class="mt-2 text-sm text-slate-300">Feltételes, külső jóváhagyásoktól és KPI‑któl függ.</p>
+        </li>
+      </ol>
+      <p class="mt-4 text-xs text-slate-400">*A listázási célok nem garanciák.</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="downloads" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Letöltések</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <h3 class="font-semibold">Whitepaper (HU)</h3>
+          <p class="mt-2 text-sm text-slate-300">Végleges (v1.3)</p>
+          <div class="mt-4 flex gap-3">
+            <!-- Cseréld saját tárhelyed URL-jére (pl. /docs/...) -->
+            <a class="btn" href="#" download>PDF</a>
+            <a class="btn-outline border-white/20" href="#" download>DOCX</a>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <h3 class="font-semibold">Whitepaper (EN)</h3>
+          <p class="mt-2 text-sm text-slate-300">Final (v1.3)</p>
+          <div class="mt-4 flex gap-3">
+            <a class="btn" href="#" download>PDF</a>
+            <a class="btn-outline border-white/20" href="#" download>DOCX</a>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <h3 class="font-semibold">Listing Kit (EN)</h3>
+          <p class="mt-2 text-sm text-slate-300">CoinGecko / CMC sablonok</p>
+          <div class="mt-4 flex gap-3">
+            <a class="btn-outline border-white/20" href="#" download>DOCX</a>
+            <a class="btn-outline border-white/20" href="#" download>XLSX</a>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/10">
+          <h3 class="font-semibold">Megrendelés Yousuf részére</h3>
+          <p class="mt-2 text-sm text-slate-300">SOW / Purchase Order (400 USD)</p>
+          <div class="mt-4 flex gap-3">
+            <a class="btn-outline border-white/20" href="#" download>DOCX</a>
+            <a class="btn-outline border-white/20" href="#" download>HU összefoglaló (PDF)</a>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-400">Tipp: a fenti linkeket cseréld ki a saját tárhelyed elérési útjaira (pl. <code>/docs/whitepaper_hu.pdf</code>).</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Kapcsolat</h2>
+        <p class="mt-3 text-slate-300">Csatlakoznál klubként, önkéntesként vagy támogatóként? Írj nekünk!</p>
+        <div class="mt-6">
+          <a class="btn" href="mailto:info@antidroug.org">info@antidroug.org</a>
+        </div>
+      </div>
+      <form class="bg-slate-900/60 border border-white/10 rounded-2xl p-6" onsubmit="sendMail(event)">
+        <label class="block text-sm text-slate-300">Neved</label>
+        <input class="mt-1 w-full bg-slate-800/80 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" required placeholder="Teljes név" />
+        <label class="block text-sm text-slate-300 mt-4">E‑mail</label>
+        <input type="email" class="mt-1 w-full bg-slate-800/80 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" required placeholder="you@example.com" />
+        <label class="block text-sm text-slate-300 mt-4">Üzenet</label>
+        <textarea rows="4" class="mt-1 w-full bg-slate-800/80 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" required placeholder="Miben tudunk segíteni?"></textarea>
+        <button class="btn mt-4" type="submit">Küldés</button>
+        <p id="mailHint" class="mt-2 text-xs text-slate-400">A „Küldés” gomb a leveleződbe nyit egy előre kitöltött e‑mailt (szerver nélküli üzem).</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 py-10 text-center text-sm text-slate-400">
+    <div class="mx-auto max-w-7xl px-4">
+      © <span id="year"></span> Antidroug World Association • ADC
+      <span class="block mt-2">Jogi nyilatkozat: az oldal tartalma nem minősül befektetési tanácsadásnak; az ADC használati/jutalmazási token.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Copy contract address
+    document.getElementById('copyAddr').addEventListener('click', () => {
+      const txt = document.getElementById('contractAddress').textContent.trim();
+      navigator.clipboard.writeText(txt);
+    });
+    // Mailto fallback form
+    function sendMail(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = form.querySelector('input[placeholder="Teljes név"]').value;
+      const email = form.querySelector('input[type="email"]').value;
+      const msg = form.querySelector('textarea').value;
+      const body = encodeURIComponent(`Név: ${name}\nE-mail: ${email}\n\nÜzenet:\n${msg}`);
+      location.href = `mailto:info@antidroug.org?subject=ADWA%20kapcsolat&body=${body}`;
+    }
+    // Language toggle (simple show/hide blocks)
+    const btnHu = document.getElementById('langHu');
+    const btnEn = document.getElementById('langEn');
+    const nodesHu = document.querySelectorAll('[data-lang="hu"]');
+    const nodesEn = document.querySelectorAll('[data-lang="en"]');
+    function setLang(lang){
+      if(lang==='en'){
+        nodesEn.forEach(n=>n.style.display='');
+        nodesHu.forEach(n=>n.style.display='none');
+      } else {
+        nodesHu.forEach(n=>n.style.display='');
+        nodesEn.forEach(n=>n.style.display='none');
+      }
+    }
+    btnHu.addEventListener('click',()=>setLang('hu'));
+    btnEn.addEventListener('click',()=>setLang('en'));
+  </script>
+</body>
+</html>
